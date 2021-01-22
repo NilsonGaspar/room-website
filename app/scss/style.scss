@@ -1,7 +1,7 @@
 @import "variables";
+@import "mixins";
+@import "animations";
 @import "globals";
-
-.logo {
-  color: #000;
-  background-color: #000000;
-}
+@import "header";
+@import "hero";
+@import "about";
