@@ -17,6 +17,16 @@ body {
   font-weight: 500;
 }
 
+h1 {
+  margin: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+
 a,
 :visited,
 a:hover {
@@ -42,13 +52,25 @@ li {
 }
 
 .hide-mobile {
-  @include breakpoint-down(medium) {
+  @include breakpoint-max(medium) {
     display: none;
   }
 }
 
 .hide-desktop {
-  @include breakpoint-up(large) {
+  @include breakpoint-min(large) {
+    display: none;
+  }
+}
+
+.hide-img-desktop {
+  @include breakpoint-min(medium) {
+    display: none;
+  }
+}
+
+.hide-img-mobile {
+  @include breakpoint-max(small) {
     display: none;
   }
 }

@@ -36,6 +36,7 @@ btnHamburger.addEventListener("click", function () {
 
 function showNextSlide() {
   slides[count].classList.remove("active");
+  slides[count].classList.remove("fade-out");
 
   if (count < totalSlides - 1) {
     count++;
@@ -43,6 +44,7 @@ function showNextSlide() {
     count = 0;
   }
   slides[count].classList.add("active");
+  slides[count].classList.add("fade-in");
 }
 
 function showPrevSlide() {
@@ -65,5 +67,12 @@ function keyPress(e) {
   }
 }
 
+function resetHeader() {
+  if (window.innerWidth >= 1024) {
+    header.classList.remove("open");
+  }
+}
+
 btnNext.addEventListener("click", showNextSlide);
 btnPrev.addEventListener("click", showPrevSlide);
+window.onresize = resetHeader;

@@ -1,16 +1,30 @@
 .about {
-  &__content {
+  @include breakpoint-min(large) {
+    &__content {
+      display: flex;
+    }
   }
-
   &__description {
-    padding: 3.4375rem 1.71875rem;
+    padding: 3.4375rem 2.5rem;
+    > h4 {
+      text-transform: uppercase;
+      letter-spacing: 0.3125rem;
+    }
     > p {
-      min-height: 6.875rem;
       color: $darkGrey;
-      line-height: 1.5;
+      line-height: 1.6;
     }
   }
   &__image {
+    object-fit: cover;
     width: 100%;
+
+    @include breakpoint-min(large) {
+      width: 350px;
+    }
+
+    @include breakpoint-min(xlarge) {
+      width: 100%;
+    }
   }
 }

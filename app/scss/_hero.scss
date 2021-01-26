@@ -1,9 +1,13 @@
 .hero {
   .active {
     display: block;
+
+    @include breakpoint-min(large) {
+      display: flex;
+    }
   }
   &__carousel {
-    max-width: 840px;
+    position: relative;
   }
 
   &__slide {
@@ -11,47 +15,118 @@
   }
 
   &__image {
+    object-fit: cover;
     width: 100%;
+
+    @include breakpoint-max(small) {
+      height: 360px;
+    }
+
+    //mobile fix
+    @media (min-width: 500px) {
+      height: 560px;
+    }
+
+    @include breakpoint-min(large) {
+      width: 680px;
+    }
+
+    @include breakpoint-min(xlarge) {
+      width: 100%;
+    }
   }
 
   &__description {
     padding: 3.4375rem 1.71875rem;
+    max-height: 560px;
+
+    > h1 {
+      font-size: 34px;
+      padding-bottom: 10px;
+
+      @include breakpoint-max(medium) {
+        font-size: 26px;
+      }
+    }
     > p {
-      min-height: 7.875rem;
       color: $darkGrey;
-      line-height: 1.5;
+      line-height: 1.6;
+    }
+
+    @include breakpoint-min(large) {
+      padding: 70px 50px 0 50px;
+    }
+    @include breakpoint-min(xlarge) {
+      padding: 80px 75px;
     }
   }
 
   &__btnShopNow {
-    margin-top: 55px;
+    display: block;
     letter-spacing: 0.6875rem;
     cursor: pointer;
+    margin-top: 40px;
+    transition: opacity 200ms ease-in-out;
+
+    &:hover,
+    > img:hover {
+      opacity: 0.6;
+    }
 
     > img {
       margin-left: 1.25rem;
     }
+
+    // @include breakpoint-min(large) {
+    //   margin-top: 30px;
+    // }
   }
 
   &__btn {
     display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 316px;
+    z-index: 2;
+
+    @media (min-width: 500px) {
+      top: 516px;
+    }
+
+    @include breakpoint-min(large) {
+      top: 509px;
+      left: 679.45px;
+    }
+
+    @include breakpoint-min(xlarge) {
+      left: 52.5rem;
+    }
+
+    #btnPrev,
+    #btnNext {
+      background-color: $black;
+      padding: 12px 21.5px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: all 200ms ease-in-out;
+      &:hover {
+        background-color: $veryDarkGray;
+      }
+    }
+
+    > button > img {
+      @include breakpoint-max(medium) {
+        width: 10px;
+      }
+    }
   }
-
-  &__btn > button > img {
-    width: 10px;
-  }
-
-  #btnPrev,
-  #btnNext {
-    background-color: $black;
-    padding: 12px 21.5px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $veryDarkGray;
+  // fix firefox
+  @-moz-document url-prefix() {
+    @include breakpoint-min(xlarge) {
+      .hero__btn {
+        left: 880px;
+      }
     }
   }
 }

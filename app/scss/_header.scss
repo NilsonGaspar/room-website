@@ -1,8 +1,9 @@
 .header {
-  position: absolute;
-  top: 0;
   width: 100%;
+  position: absolute;
   transition: all 400ms ease-in-out;
+  max-width: 1440px;
+  z-index: 99;
 
   &.open {
     background-color: $white;
@@ -29,6 +30,10 @@
 
     .header__links a {
       color: $black;
+
+      &::before {
+        background: $black;
+      }
     }
   }
 
@@ -39,6 +44,25 @@
   &__logo {
     margin-right: 1.8125rem;
     height: 14px;
+
+    & svg path {
+      transition: all 400ms ease-in-out;
+    }
+
+    &:hover svg path {
+      fill: $veryDarkGray;
+    }
+
+    @include breakpoint-max(medium) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include breakpoint-min(large) {
+      margin-left: 4.875rem;
+    }
   }
 
   &__menu {
