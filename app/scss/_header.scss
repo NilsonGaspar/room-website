@@ -1,14 +1,12 @@
 .header {
   width: 100%;
   position: absolute;
-  transition: all 400ms ease-in-out;
   max-width: 1440px;
   z-index: 99;
 
   &.open {
     background-color: $white;
     transition: all 400ms ease-in-out;
-
     .overlay {
       animation: fade-in 400ms ease-in-out forwards;
     }
@@ -35,6 +33,9 @@
         background: $black;
       }
     }
+  }
+  &.closed {
+    transition: all 400ms ease-in-out;
   }
 
   .nav {

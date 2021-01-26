@@ -11,7 +11,7 @@ const totalSlides = slides.length;
 let count = 0;
 let btnWrapper = document.createElement("div");
 
-btnHamburger.addEventListener("click", function () {
+function handleEffects() {
   if (!header.classList.contains("open")) {
     // Open
     header.classList.add("open");
@@ -26,13 +26,17 @@ btnHamburger.addEventListener("click", function () {
     headerLinks.classList.remove("fade-in");
     headerLinks.classList.add("fade-out");
     overlay.classList.add("fade-out");
+    header.classList.add("closed");
     setTimeout(function () {
       logo.classList.remove("hide-mobile");
       headerLinks.classList.add("hide-mobile");
       headerLinks.classList.remove("fade-out");
     }, 100);
   }
-});
+}
+
+btnHamburger.addEventListener("click", handleEffects);
+overlay.addEventListener("click", handleEffects);
 
 function showNextSlide() {
   slides[count].classList.remove("active");

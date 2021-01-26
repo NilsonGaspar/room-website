@@ -161,8 +161,6 @@ li {
 .header {
   width: 100%;
   position: absolute;
-  -webkit-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
   max-width: 1440px;
   z-index: 99;
 }
@@ -202,6 +200,11 @@ li {
 
 .header.open .header__links a::before {
   background: black;
+}
+
+.header.closed {
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 
 .header .nav {
