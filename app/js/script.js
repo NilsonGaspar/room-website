@@ -64,12 +64,21 @@ function showPrevSlide() {
 
 function keyPress(e) {
   e = e || window.event;
-  if (e.keyCode == "37") {
+  if (e.onkeydown == "37") {
     showPrevSlide();
-  } else if (e.keyCode == "39") {
+  } else if (e.onkeydown == "39") {
     showNextSlide();
   }
 }
+
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+  if (key == "ArrowLeft") {
+    showPrevSlide();
+  } else if (key == "ArrowRight") {
+    showNextSlide();
+  }
+});
 
 function resetHeader() {
   if (window.innerWidth >= 1024) {
