@@ -2,6 +2,4 @@
  Frontend Mentor
  Room Website Challenge
 
-SCSS
-HTML 
-JavaScript
+SCSS, HTML, JavaScript
