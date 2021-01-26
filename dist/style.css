@@ -96,7 +96,7 @@ h1 {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
 }
 
 a,
@@ -213,13 +213,10 @@ li {
   height: 14px;
 }
 
-.header__logo svg path {
-  -webkit-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
-}
-
 .header__logo:hover svg path {
   fill: #454545;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 
 @media (max-width: 63.9375em) {
@@ -440,13 +437,13 @@ li {
   outline: none;
   border: none;
   cursor: pointer;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
 }
 
 .hero__btn #btnPrev:hover,
 .hero__btn #btnNext:hover {
   background-color: #454545;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 @media (max-width: 63.9375em) {

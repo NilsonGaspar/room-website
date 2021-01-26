@@ -109,9 +109,10 @@
       outline: none;
       border: none;
       cursor: pointer;
-      transition: all 200ms ease-in-out;
+
       &:hover {
         background-color: $veryDarkGray;
+        transition: all 200ms ease-in-out;
       }
     }
 

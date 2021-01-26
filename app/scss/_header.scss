@@ -45,12 +45,9 @@
     margin-right: 1.8125rem;
     height: 14px;
 
-    & svg path {
-      transition: all 400ms ease-in-out;
-    }
-
     &:hover svg path {
       fill: $veryDarkGray;
+      transition: all 250ms ease-in-out;
     }
 
     @include breakpoint-max(medium) {
